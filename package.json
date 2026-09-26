@@ -1,0 +1,11 @@
+{
+  "name": "healthcare-survivor",
+  "version": "0.1.0",
+  "description": "면역체계와 의학을 모티프로 한 서바이버류 교육용 게임",
+  "private": true,
+  "scripts": {
+    "test": "node tests/efficacy.test.js",
+    "start": "npx --yes http-server -c-1 -p 8080 ."
+  },
+  "license": "UNLICENSED"
+}
