@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Healthcare Survivor</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud" class="hidden">
+    <div class="top">
+      <div class="bar hp"><div id="hp-fill"></div><span id="hp-text"></span></div>
+      <div class="meta"><span id="time"></span><span id="level"></span><span id="kills"></span>
+        <button id="btn-pause" class="mini" aria-label="일시정지">Ⅱ</button></div>
+      <div class="bar xp"><div id="xp-fill"></div></div>
+    </div>
+    <div class="side">
+      <div class="panel">
+        <div class="label">약물 독성</div>
+        <div class="bar small"><div id="tox-fill"></div></div>
+        <div id="status-chips"></div>
+      </div>
+      <div class="panel">
+        <div class="label">내성균 출현 확률 (선택압)</div>
+        <div id="pressure"></div>
+      </div>
+      <div class="panel">
+        <div class="label">면역기억</div>
+        <div id="memory"></div>
+      </div>
+    </div>
+    <div id="weapons"></div>
+    <div id="log"></div>
+  </div>
+
+  <div id="banner"></div>
+
+  <div id="start" class="overlay">
+    <div class="window wide">
+      <h1>Healthcare Survivor</h1>
+      <p class="lead">면역체계와 의학으로 질병을 막아내는 서바이버 게임.<br>
+        각 치료수단은 <b>실제 작용기전</b>에 따라 특정 병원체에만 효과가 있습니다.</p>
+      <p class="muted">이동: WASD / 방향키 / 화면 드래그 · 공격: 자동 · 일시정지·도감: ESC 또는 P · 레벨업 카드: 1/2/3</p>
+      <button id="btn-start" class="primary">시작</button>
+      <div class="codex">
+        <div class="tabs"><button class="tab" data-tab="rules">규칙</button><button class="tab" data-tab="enemies">병원체 도감</button><button class="tab" data-tab="weapons">치료수단 도감</button></div>
+        <div class="codex-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="levelup" class="overlay hidden">
+    <div class="window wide">
+      <h2>레벨 업 — 치료 전략 선택</h2>
+      <div id="choices"></div>
+    </div>
+  </div>
+
+  <div id="pause" class="overlay hidden">
+    <div class="window wide">
+      <h2>일시정지</h2>
+      <button id="btn-resume" class="primary">계속</button>
+      <div class="codex">
+        <div class="tabs"><button class="tab" data-tab="rules">규칙</button><button class="tab" data-tab="enemies">병원체 도감</button><button class="tab" data-tab="weapons">치료수단 도감</button></div>
+        <div class="codex-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="gameover" class="overlay hidden">
+    <div class="window wide">
+      <h2 id="go-title"></h2>
+      <div id="go-body"></div>
+      <button id="btn-restart" class="primary">다시 시작</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
